@@ -1,21 +1,22 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Homepage from "./Homepage";
 
-class App extends Component {
+import RecipeCard from "./RecipeCard";
+import Navbar from "./Navbar";
+
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+class Recipes extends Component {
   state = {};
 
   whatever = () => {};
 
   render() {
     return (
-      <div className="App">
-        <Homepage />
+      <div className="Recipes">
+        <RecipeCard />
       </div>
     );
   }
 }
 
-export default App;
+export default Recipes;
