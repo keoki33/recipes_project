@@ -20,18 +20,7 @@ class Homepage extends Component {
               exact
               path="/recipes"
               component={props => (
-                <Recipes
-                  user={this.props.user}
-                  selectedIngredients={this.props.selectedIngredients}
-                  timeField={this.props.timeField}
-                  updateAppSearch={this.props.updateAppSearch}
-                  updateAppUser={this.props.updateAppUser}
-                  ingredientsField={this.props.ingredientsField}
-                  updateIngredientsField={this.props.updateIngredientsField}
-                  updatetimeField={this.props.updatetimeField}
-                  {...props}
-                  nav={true}
-                />
+                <Recipes user={this.props.user} {...props} nav={true} />
               )}
             />
             <Route

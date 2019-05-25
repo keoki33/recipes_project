@@ -95,20 +95,19 @@ class Recipes extends Component {
     ));
   };
 
+  updateSearch = (search, time) => {
+    console.log(search);
+    console.log(time);
+  };
+
   whatever = () => {};
 
   render() {
     return (
       <div className="Recipes">
         <Navbar
+          updateSearch={this.updateSearch}
           user={this.props.user}
-          selectedIngredients={this.props.selectedIngredients}
-          timeField={this.props.timeField}
-          updateAppSearch={this.props.updateAppSearch}
-          updateAppUser={this.props.updateAppUser}
-          ingredientsField={this.props.ingredientsField}
-          updateIngredientsField={this.props.updateIngredientsField}
-          updatetimeField={this.props.updatetimeField}
           nav={this.props.nav}
         />
         {this.displayRecipes()}

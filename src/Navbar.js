@@ -24,14 +24,8 @@ class Navbar extends Component {
               <Grid.Column width={10}>
                 {this.props.nav ? (
                   <NavbarSearch
+                    updateSearch={this.props.updateSearch}
                     user={this.props.user}
-                    selectedIngredients={this.props.selectedIngredients}
-                    timeField={this.props.timeField}
-                    updateAppSearch={this.props.updateAppSearch}
-                    updateAppUser={this.props.updateAppUser}
-                    ingredientsField={this.props.ingredientsField}
-                    updateIngredientsField={this.props.updateIngredientsField}
-                    updatetimeField={this.props.updatetimeField}
                   />
                 ) : (
                   <NavbarDetails />

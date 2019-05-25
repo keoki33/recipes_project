@@ -7,10 +7,7 @@ import Homepage from "./Homepage";
 class App extends Component {
   state = {
     user: "",
-    normal: true, //true will load normal site, false will be 2009 site
-    selectedIngredients: [],
-    timeField: 60,
-    ingredientsField: ""
+    normal: true //true will load normal site, false will be 2009 site
   };
 
   whatever = () => {};
@@ -37,6 +34,7 @@ class App extends Component {
   };
 
   updatetimeField = x => {
+    // console.log(x);
     this.setState({
       timeField: x
     });
@@ -45,16 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Homepage
-          user={this.state.user}
-          selectedIngredients={this.state.selectedIngredients}
-          timeField={this.state.timeField}
-          updateAppSearch={this.updateAppSearch}
-          updateAppUser={this.updateAppUser}
-          ingredientsField={this.state.ingredientsField}
-          updateIngredientsField={this.updateIngredientsField}
-          updatetimeField={this.updatetimeField}
-        />
+        <Homepage user={this.state.user} />
       </div>
     );
   }

@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 class NavbarSearch extends Component {
   state = {
     timeField: 60,
-    // ingredientsField: "",
-    ingredients: ["beef", "chocolate", "chicken", "dog", "cat"]
-    // selectedIngredients: []
+    ingredientsField: "",
+    ingredients: ["beef", "chocolate", "chicken", "dog", "cat"],
+    selectedIngredients: []
   };
 
   whatever = () => {};
@@ -18,18 +18,21 @@ class NavbarSearch extends Component {
     // console.log(this.state.timeField);
     this.state.ingredientsField !== "" &&
       !this.state.selectedIngredients.includes(this.state.ingredientsField) &&
-      this.setState({
-        selectedIngredients: [
-          ...this.state.selectedIngredients,
-          this.state.ingredientsField
-        ],
-        ingredientsField: ""
-      });
-    // console.log(this.state.selectedIngredients);
-    this.props.updateAppSearch(
-      this.state.selectedIngredients,
-      this.state.timeField
-    );
+      this.setState(
+        {
+          selectedIngredients: [
+            ...this.state.selectedIngredients,
+            this.state.ingredientsField
+          ],
+          ingredientsField: ""
+        },
+        () => {
+          this.props.updateSearch(
+            this.state.selectedIngredients,
+            this.state.timeField
+          );
+        }
+      );
   };
 
   displayIngredients = () => {
@@ -88,7 +91,8 @@ class NavbarSearch extends Component {
                   name="time"
                   value={this.state.timeField}
                   onChange={event => {
-                    this.setState({ timeField: event.value });
+                    // this.props.updatetimeField(event.target.value);
+                    this.setState({ timeField: event.target.value });
                   }}
                 />
               </div>
