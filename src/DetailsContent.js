@@ -4,21 +4,19 @@ import React, { Component } from "react";
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-class NavbarDetails extends Component {
+class DetailsContent extends Component {
   state = {};
 
   whatever = () => {};
 
   render() {
     return (
-      <div className="NavbarDetails">
-        <p>NavbarDetails</p>
-        <Link to="/recipes">
-          <h1>Back to Recipes</h1>
-        </Link>
+      <div className="DetailsContent">
+        <h1> {this.props.recipe[0].name}</h1>
+        {console.log(this.props)}
       </div>
     );
   }
 }
 
-export default NavbarDetails;
+export default DetailsContent;

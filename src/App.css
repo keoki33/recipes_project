@@ -17,3 +17,8 @@
   border: 1px solid #196393;
   height: 100px;
 }
+
+.RecipeCard {
+  float: left;
+  padding: 10px;
+}
