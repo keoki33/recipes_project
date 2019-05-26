@@ -94,15 +94,13 @@ class Details extends Component {
 
   render() {
     return (
-      <div className="Details">
+      <div className="DetailsWrapper">
         <Navbar />
         {this.state.recipe ? (
           <DetailsContent recipe={this.state.recipe} />
         ) : (
           <DetailsPlaceholder />
         )}
-
-        {/* {console.log(this.state.recipe[0])} */}
       </div>
     );
   }

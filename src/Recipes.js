@@ -110,7 +110,7 @@ class Recipes extends Component {
           user={this.props.user}
           nav={this.props.nav}
         />
-        {this.displayRecipes()}
+        <div className="RecipesWrapper">{this.displayRecipes()}</div>
       </div>
     );
   }

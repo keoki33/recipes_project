@@ -13,6 +13,18 @@ class DetailsContent extends Component {
     return (
       <div className="DetailsContent">
         <h1> {this.props.recipe[0].name}</h1>
+        <div className="DetailsImage">
+          <h1>image DetailsImage</h1>
+        </div>
+        <div className="DetailsIngredients">
+          <h1>ingredients DetailsIngredients</h1>
+        </div>
+        <div className="DetailsInstructions">
+          <h1>instruction DetailsInstructions</h1>
+        </div>
+        <div className="DetailsVideo">
+          <h1>video DetailsVideo</h1>
+        </div>
         {console.log(this.props)}
       </div>
     );
