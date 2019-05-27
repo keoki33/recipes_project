@@ -31,7 +31,12 @@ class Navbar extends Component {
     return (
       <div className="navbar">
         <div className="navbarLogo">
-          <h1>Logo</h1>
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/logo.jpeg`)}
+            alt=""
+            width="80"
+            height="80"
+          />
         </div>
         {this.navbarMode()}
         <div className="navbarLogin">

@@ -20,33 +20,42 @@
 /* Details Page  */
 
 .detailsContent {
-  width: 99%;
+  width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    "image recipe recipe"
-    "ingredients recipe recipe"
-    "video recipe recipe";
+    "im im im i i i"
+    "im im im i i i"
+    "v v v v v v"
+    "r r r r r r";
 
   /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .detailsImage {
-  grid-area: image;
+  grid-area: im;
 }
 
 .detailsIngredients {
-  grid-area: ingredients;
+  grid-area: i;
 }
 
 .detailsInstructions {
-  grid-area: recipe;
+  grid-area: r;
+  font-size: 20px;
+  text-align: justify;
+  white-space: pre-line;
 }
 
 .detailsVideo {
-  grid-area: video;
+  grid-area: v;
+}
+
+iframe {
+  float: left;
+  margin: 10px;
 }
 
 /* Recipe Cards */
