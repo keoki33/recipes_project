@@ -19,12 +19,34 @@
 
 /* Details Page  */
 
-.DetailsContent {
-  width: 90%;
+.detailsContent {
+  width: 99%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: 30%; */
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image recipe recipe"
+    "ingredients recipe recipe"
+    "video recipe recipe";
+
+  /* grid-template-columns: repeat(2, 1fr); */
+}
+
+.detailsImage {
+  grid-area: image;
+}
+
+.detailsIngredients {
+  grid-area: ingredients;
+}
+
+.detailsInstructions {
+  grid-area: recipe;
+}
+
+.detailsVideo {
+  grid-area: video;
 }
 
 /* Recipe Cards */
@@ -37,6 +59,7 @@
   grid-gap: 10px;
 }
 
+/* grid-template-columns: minmax(0, 1fr) 300px; */
 /* Navbar */
 
 .navbar {
@@ -60,8 +83,5 @@
 }
 
 .navbarSearch {
-  grid-column: 3 / 4;
-  min-width: 0;
-  /* align-items: center; */
-  /* text-align: center; */
+  grid-column: 3/10;
 }

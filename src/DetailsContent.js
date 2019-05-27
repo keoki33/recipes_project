@@ -9,23 +9,40 @@ class DetailsContent extends Component {
 
   whatever = () => {};
 
+  displayIngredients = () => {
+    let measure = this.props.recipe[0].MeasurementsArr.map(x => x);
+    let ingredients = this.props.recipe[0].IngredientsArr.map(x => x);
+    let list = [];
+    measure.forEach((item, index) => {
+      list.push(item.concat(` ${ingredients[index]}`));
+    });
+    const filtered = list.filter(x => x !== " ");
+    return filtered.map(x => <li>{x}</li>);
+  };
+
   render() {
     return (
-      <div className="DetailsContent">
-        <h1> {this.props.recipe[0].name}</h1>
-        <div className="DetailsImage">
-          <h1>image DetailsImage</h1>
+      <div className="detailsContent">
+        <div className="detailsImage">
+          <h1>{this.props.recipe[0].strMeal}</h1>
+          <img
+            src={this.props.recipe[0].strMealThumb}
+            alt={this.props.recipe[0].strMealThumb}
+          />
         </div>
-        <div className="DetailsIngredients">
-          <h1>ingredients DetailsIngredients</h1>
+        <div className="detailsIngredients">
+          <ul>{this.displayIngredients()}</ul>
         </div>
-        <div className="DetailsInstructions">
-          <h1>instruction DetailsInstructions</h1>
+        <div className="detailsInstructions">
+          <h1>recipe instruction</h1>
         </div>
-        <div className="DetailsVideo">
-          <h1>video DetailsVideo</h1>
+        <div className="detailsVideo">
+          <iframe
+            // width="420"
+            // height="315"
+            src={this.props.recipe[0].strYoutube.replace("watch?v=", "embed/")}
+          />
         </div>
-        {console.log(this.props)}
       </div>
     );
   }

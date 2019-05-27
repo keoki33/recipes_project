@@ -14,7 +14,7 @@ class NavbarDetails extends Component {
       <div className="NavbarDetails">
         <p>NavbarDetails</p>
         <Link to="/recipes">
-          <h1>Back to Recipes</h1>
+          <h3>Back to Recipes</h3>
         </Link>
       </div>
     );

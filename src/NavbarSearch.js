@@ -70,7 +70,7 @@ class NavbarSearch extends Component {
         <Form>
           <Form.Field>
             <div className="ui action input">
-              <div>
+              <div className="navbarSearch">
                 <Input
                   onChange={event => {
                     this.setState({ ingredientsField: event.target.value });

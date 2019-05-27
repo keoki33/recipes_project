@@ -20,9 +20,9 @@ class RecipeCard extends Component {
             }}
             raised={true}
           >
-            <Image src={this.props.recipe.url} wrapped ui={false} />
+            <Image src={this.props.recipe.strMealThumb} wrapped ui={false} />
             <Card.Content>
-              <Card.Header>{this.props.recipe.name}</Card.Header>
+              <Card.Header>{this.props.recipe.strMeal}</Card.Header>
 
               <Card.Description>
                 Time to cook: {this.props.recipe.time} minutes
