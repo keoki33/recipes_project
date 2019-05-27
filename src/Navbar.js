@@ -12,34 +12,34 @@ class Navbar extends Component {
 
   whatever = () => {};
 
+  navbarMode = () => {
+    return this.props.nav ? (
+      <div className="navbarSearch">
+        <NavbarSearch
+          updateSearch={this.props.updateSearch}
+          user={this.props.user}
+        />
+      </div>
+    ) : (
+      <div className="navbarDetails">
+        <NavbarDetails />
+      </div>
+    );
+  };
+
   render() {
     return (
-      <div className="Navbar">
-        <Container>
-          <Grid columns={3} divided>
-            <Grid.Row>
-              <Grid.Column width={2}>
-                <h1>Logo</h1>
-              </Grid.Column>
-              <Grid.Column width={10}>
-                {this.props.nav ? (
-                  <NavbarSearch
-                    updateSearch={this.props.updateSearch}
-                    user={this.props.user}
-                  />
-                ) : (
-                  <NavbarDetails />
-                )}
-              </Grid.Column>
-              <Grid.Column width={3}>
-                <NavbarLogin
-                  user={this.props.user}
-                  updateAppUser={this.props.updateAppUser}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
+      <div className="navbar">
+        <div className="navbarLogo">
+          <h1>Logo</h1>
+        </div>
+        {this.navbarMode()}
+        <div className="navbarLogin">
+          <NavbarLogin
+            user={this.props.user}
+            updateAppUser={this.props.updateAppUser}
+          />
+        </div>
       </div>
     );
   }

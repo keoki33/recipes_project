@@ -11,10 +11,7 @@
     transform: rotate(360deg);
   }
 }
-.Navbar {
-  border: 1px solid #196393;
-  height: 100px;
-}
+
 /* .RecipeCard {
   float: left;
   padding: 10px;
@@ -38,4 +35,33 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
+}
+
+/* Navbar */
+
+.navbar {
+  border: 1px solid #196393;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(12, 100px);
+}
+
+.navbarLogo {
+}
+
+.navbarDetails {
+  grid-column: 3 / 4;
+  align-items: center;
+  text-align: center;
+}
+
+.navbarLogin {
+  grid-column: 11/13;
+}
+
+.navbarSearch {
+  grid-column: 3 / 4;
+  min-width: 0;
+  /* align-items: center; */
+  /* text-align: center; */
 }
