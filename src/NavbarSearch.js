@@ -36,7 +36,7 @@ class NavbarSearch extends Component {
   };
 
   displayIngredients = () => {
-    return this.state.ingredients.map(x => <option key={x} value={x} />);
+    return this.props.ingredientsList.map(x => <option key={x} value={x} />);
   };
 
   ingredientButtons = () => {
@@ -46,7 +46,7 @@ class NavbarSearch extends Component {
           this.deleteIngredient(event);
         }}
         key={x}
-        className="ui action input"
+        className="iButton"
         type=""
         name={x}
       >

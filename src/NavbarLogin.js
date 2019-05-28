@@ -24,6 +24,7 @@ class NavbarLogin extends Component {
     ) : (
       <div>
         {`Welcome ${this.props.user}  `}
+        <br />
         <button
           onClick={event => {
             this.props.logout();

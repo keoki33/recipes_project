@@ -5,6 +5,7 @@ export default class RecipeCardPlaceholder extends Component {
   render() {
     return (
       <Grid columns={3} stackable>
+        <h1>LOOOOAAADDING</h1>
         <Grid.Column>
           <Segment raised>
             <Placeholder>

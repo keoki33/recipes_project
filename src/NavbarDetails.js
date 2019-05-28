@@ -12,8 +12,8 @@ class NavbarDetails extends Component {
   render() {
     return (
       <div className="NavbarDetails">
-        {/* <h1>{this.props.recipe[0].strMeal}</h1> */}
-        {console.log(this.props)}
+        <h1>{this.props.recipe[0] && this.props.recipe[0].strMeal}</h1>
+        {console.log(this.props.recipe[0])}
 
         <Link to="/recipes">Back to Recipes</Link>
       </div>

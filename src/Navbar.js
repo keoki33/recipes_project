@@ -16,6 +16,7 @@ class Navbar extends Component {
     return this.props.nav ? (
       <div className="navbarSearch">
         <NavbarSearch
+          ingredientsList={this.props.ingredientsList}
           updateSearch={this.props.updateSearch}
           user={this.props.user}
         />
