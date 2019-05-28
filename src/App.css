@@ -78,6 +78,10 @@ iframe {
   grid-template-columns: repeat(12, 100px);
 }
 
+.RecipeCard {
+  text-align: center;
+}
+
 .navbarLogo {
 }
 
