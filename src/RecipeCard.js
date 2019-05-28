@@ -3,10 +3,12 @@ import React, { Component } from "react";
 // import RecipeCard from "./RecipeCard";
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Placeholder } from "semantic-ui-react";
 
 class RecipeCard extends Component {
-  state = { favourite: false };
+  state = {
+    favourite: false
+  };
 
   whatever = () => {};
 
@@ -29,6 +31,7 @@ class RecipeCard extends Component {
             raised={true}
           >
             <Image src={this.props.recipe.strMealThumb} wrapped ui={false} />
+
             <Card.Content>
               <Card.Header>{this.props.recipe.strMeal}</Card.Header>
 

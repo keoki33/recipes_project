@@ -61,25 +61,40 @@ iframe {
 /* Recipe Cards */
 
 .RecipesWrapper {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 /* grid-template-columns: minmax(0, 1fr) 300px; */
 /* Navbar */
 
 .navbar {
-  border: 1px solid #196393;
+  border: 1px solid #239319;
   height: 100px;
   display: grid;
   grid-template-columns: repeat(12, 100px);
+  margin: 10px;
 }
 
 .RecipeCard {
   text-align: center;
+
+  /* width: 50%;
+  margin: 0 auto;
+  text-align: center;
+
+  margin: 10px;
+  border: 1px solid #0000ff;
+  /* height: 500px; */
+  /* width: auto;  */
+  /* float: left; */
+
+  /* -webkit-box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.94);
+  box-shadow: 4px 7px 7px 0px rgba(0, 0, 0, 0.94);
+  padding: 10px; */
 }
 
 .navbarLogo {
