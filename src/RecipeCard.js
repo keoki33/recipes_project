@@ -23,36 +23,31 @@ class RecipeCard extends Component {
   render() {
     return (
       <Router>
-        <div className="RecipeCard">
-          <Card
+        <div
+          className="RecipeCard"
+          onClick={event => {
+            this.props.handleClick();
+          }}
+        >
+          <img
+            src={this.props.recipe.strMealThumb}
+            // width="100px"
+            // height="100px"
+            alt=""
+          />
+          <h4>{this.props.recipe.strMeal}</h4>
+          Time to cook: {this.props.recipe.time} minutes
+          <button
             onClick={event => {
-              this.props.handleClick();
+              event.stopPropagation();
+              this.state.favourite
+                ? this.setState({ favourite: false })
+                : this.setState({ favourite: true });
             }}
-            raised={true}
           >
-            <Image src={this.props.recipe.strMealThumb} wrapped ui={false} />
-
-            <Card.Content>
-              <Card.Header>{this.props.recipe.strMeal}</Card.Header>
-
-              <Card.Description>
-                Time to cook: {this.props.recipe.time} minutes
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <button
-                onClick={event => {
-                  event.stopPropagation();
-                  this.state.favourite
-                    ? this.setState({ favourite: false })
-                    : this.setState({ favourite: true });
-                }}
-              >
-                {this.toggleFavorite()}
-                {this.state.favourite === false && "Add to Favourites"}
-              </button>
-            </Card.Content>
-          </Card>
+            {this.toggleFavorite()}
+            {this.state.favourite === false && "Add to Favourites"}
+          </button>
         </div>
       </Router>
     );
