@@ -742,6 +742,8 @@ class Recipes extends Component {
     return (
       <div className="Recipes">
         <Navbar
+          login={this.props.login}
+          logout={this.props.logout}
           updateSearch={this.updateSearch}
           user={this.props.user}
           nav={this.props.nav}

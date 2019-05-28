@@ -22,7 +22,7 @@ class Navbar extends Component {
       </div>
     ) : (
       <div className="navbarDetails">
-        <NavbarDetails />
+        <NavbarDetails recipe={this.props.recipe} />
       </div>
     );
   };
@@ -41,6 +41,8 @@ class Navbar extends Component {
         {this.navbarMode()}
         <div className="navbarLogin">
           <NavbarLogin
+            login={this.props.login}
+            logout={this.props.logout}
             user={this.props.user}
             updateAppUser={this.props.updateAppUser}
           />

@@ -321,7 +321,12 @@ class Details extends Component {
   render() {
     return (
       <div className="DetailsWrapper">
-        <Navbar recipe={this.state.recipe} />
+        <Navbar
+          user={this.props.user}
+          login={this.props.login}
+          logout={this.props.logout}
+          recipe={this.state.recipe}
+        />
         {this.state.recipe ? (
           <DetailsContent recipe={this.state.recipe} />
         ) : (

@@ -9,12 +9,35 @@ class NavbarLogin extends Component {
 
   whatever = () => {};
 
-  render() {
-    return (
-      <div className="NabarLogin">
-        <p>NavbarLogin</p>
+  displayLogin = () => {
+    return this.props.user === "" ? (
+      <div>
+        <form
+          onSubmit={event => {
+            this.props.login(event);
+          }}
+        >
+          <input type="text" name="user" />
+          <button> Login </button>
+        </form>
+      </div>
+    ) : (
+      <div>
+        {`Welcome ${this.props.user}  `}
+        <button
+          onClick={event => {
+            this.props.logout();
+          }}
+        >
+          {" "}
+          Logout{" "}
+        </button>
       </div>
     );
+  };
+
+  render() {
+    return <div className="NabarLogin">{this.displayLogin()}</div>;
   }
 }
 

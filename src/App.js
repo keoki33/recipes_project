@@ -12,6 +12,14 @@ class App extends Component {
 
   whatever = () => {};
 
+  login = e => {
+    this.setState({ user: e.target.user.value });
+  };
+
+  logout = () => {
+    this.setState({ user: "" });
+  };
+
   updateAppSearch = (searchTerms, searchTime) => {
     // console.log(searchTerms);
     // console.log(searchTime);
@@ -43,7 +51,11 @@ class App extends Component {
   render() {
     return (
       <div className="body">
-        <Homepage user={this.state.user} />
+        <Homepage
+          login={this.login}
+          logout={this.logout}
+          user={this.state.user}
+        />
       </div>
     );
   }

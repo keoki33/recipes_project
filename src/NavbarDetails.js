@@ -12,10 +12,10 @@ class NavbarDetails extends Component {
   render() {
     return (
       <div className="NavbarDetails">
-        <p>NavbarDetails</p>
-        <Link to="/recipes">
-          <h3>Back to Recipes</h3>
-        </Link>
+        {/* <h1>{this.props.recipe[0].strMeal}</h1> */}
+        {console.log(this.props)}
+
+        <Link to="/recipes">Back to Recipes</Link>
       </div>
     );
   }

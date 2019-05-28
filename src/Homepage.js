@@ -20,12 +20,26 @@ class Homepage extends Component {
               exact
               path="/recipes"
               component={props => (
-                <Recipes user={this.props.user} {...props} nav={true} />
+                <Recipes
+                  login={this.props.login}
+                  logout={this.props.logout}
+                  user={this.props.user}
+                  {...props}
+                  nav={true}
+                />
               )}
             />
             <Route
               path="/recipe/:id"
-              component={props => <Details {...props} nav={false} />}
+              component={props => (
+                <Details
+                  login={this.props.login}
+                  logout={this.props.logout}
+                  user={this.props.user}
+                  {...props}
+                  nav={false}
+                />
+              )}
             />
           </Switch>
         </div>
