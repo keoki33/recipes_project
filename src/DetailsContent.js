@@ -33,7 +33,7 @@ class DetailsContent extends Component {
         // }}
       >
         <div className="detailsImage">
-          {/* <h1>{this.props.recipe[0].strMeal}</h1> */}
+          <h1>{this.props.recipe[0].strMeal}</h1>
           <img
             // width="420"
             // height="315"

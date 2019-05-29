@@ -47,6 +47,12 @@ body {
   border-radius: 10px;
 }
 
+.detailsImage h1 {
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .detailsIngredients {
   grid-area: i;
   border: 1px solid #000000;
@@ -54,7 +60,7 @@ body {
 }
 
 .detailsIngredients ul li {
-  font-size: 2vw;
+  font-size: 1.5vw;
   line-height: 1.5;
   list-style-type: none;
   margin-left: 2px;
@@ -72,7 +78,7 @@ body {
   border: 1px solid #000000;
   border-radius: 10px;
   padding: 10px;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 .detailsVideo {
@@ -155,7 +161,7 @@ body {
   border: 1px solid #239319;
   height: 100px;
   display: grid;
-  grid-template-columns: repeat(12, 100px);
+  grid-template-columns: repeat(13 1fr, minmax(10px, 1fr));
   margin: 10px;
   border-radius: 10px;
   padding: 10px;
@@ -186,6 +192,7 @@ body {
 .navbarSearch {
   grid-column: 3/10;
   text-align: center;
+  max-width: 100%;
 }
 /* .navbar input {
   border-radius: 10px;

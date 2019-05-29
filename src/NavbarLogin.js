@@ -14,6 +14,7 @@ class NavbarLogin extends Component {
       <div>
         <form
           onSubmit={event => {
+            event.preventDefault();
             this.props.login(event);
           }}
         >
@@ -26,12 +27,12 @@ class NavbarLogin extends Component {
         {`Welcome ${this.props.user}  `}
         <br />
         <button
+          type="button"
           onClick={event => {
-            this.props.logout();
+            this.props.logout(event);
           }}
         >
-          {" "}
-          Logout{" "}
+          Logout
         </button>
       </div>
     );

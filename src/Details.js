@@ -20,11 +20,12 @@ class Details extends Component {
         this.setState({ recipes: x.recipes }, () =>
           this.setState({
             recipe: this.state.recipes.filter(
-              x => x.idMeal == this.props.match.params.id
+              x => x._id == this.props.match.params.id
             )
           })
         )
       );
+    console.log(this.state);
   }
 
   whatever = () => {};

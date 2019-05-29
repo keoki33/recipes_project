@@ -12,11 +12,15 @@ class App extends Component {
 
   whatever = () => {};
 
-  login = e => {
-    this.setState({ user: e.target.user.value });
+  login = event => {
+    // event.preventDefault();
+    // event.stopPropagation();
+    this.setState({ user: event.target.user.value });
+    // console.log(this.state);
   };
 
-  logout = () => {
+  logout = event => {
+    event.preventDefault();
     this.setState({ user: "" });
   };
 

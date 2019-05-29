@@ -9,10 +9,17 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 class Recipes extends Component {
   state = {
     recipe: [],
-    ingredientsList: []
+    ingredientsList: [],
+    searchTime: 60,
+    searchIngredients: [],
+    fetchUrl: "http://localhost:3000/api/recipes"
   };
 
   componentDidMount() {
+    this.loadAllRecipes();
+  }
+
+  loadAllRecipes = () => {
     this.setState({ loading: true });
     fetch("http://localhost:3000/api/recipes")
       .then(resp => resp.json())
@@ -21,14 +28,17 @@ class Recipes extends Component {
           this.setIngredientList()
         )
       );
-  }
+  };
 
   setIngredientList = () => {
     let list = this.state.recipe.map(x => x.IngredientsArr);
     list = list.reduce((a, b) => a.concat(b), []);
     let filter = list.filter(x => x !== "" || null);
     let uniq = [...new Set(filter)];
-    this.setState({ ingredientsList: uniq });
+    let sorted = uniq.sort((a, b) =>
+      a.toLowerCase().localeCompare(b.toLowerCase())
+    );
+    this.setState({ ingredientsList: sorted });
   };
 
   displayRecipes = () => {
@@ -37,8 +47,8 @@ class Recipes extends Component {
     ) : (
       this.state.recipe.map(x => (
         <RecipeCard
-          handleClick={() => this.props.history.push(`/recipe/${x.idMeal}`)}
-          key={x.idMeal}
+          handleClick={() => this.props.history.push(`/recipe/${x._id}`)}
+          key={x._id}
           recipe={x}
         />
       ))
@@ -47,7 +57,29 @@ class Recipes extends Component {
 
   updateSearch = (search, time) => {
     console.log(search);
-    console.log(time);
+
+    if (search === undefined || search.length == 0) {
+      this.loadAllRecipes();
+    } else {
+      this.setState({
+        searchTime: time,
+        searchIngredients: search,
+        loading: true
+      });
+      let end = search.join(",");
+      let url = "http://localhost:3000/api/recipes/search?q="
+        .concat(end)
+        .replace(/,*$/, "")
+        .concat(`&time=${time}`);
+      console.log(url);
+      fetch(`${url}`)
+        .then(resp => resp.json())
+        .then(x =>
+          this.setState({ recipe: x.recipes, loading: false }, () =>
+            this.setIngredientList()
+          )
+        );
+    }
   };
 
   whatever = () => {};

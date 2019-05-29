@@ -13,6 +13,12 @@ class NavbarSearch extends Component {
 
   whatever = () => {};
 
+  componentDidMount() {
+    console.log(this.state.selectedIngredients);
+    console.log("buttons");
+    this.ingredientButtons();
+  }
+
   handleClick = event => {
     // console.log(this.state.ingredientsField);
     // console.log(this.state.timeField);
@@ -57,11 +63,19 @@ class NavbarSearch extends Component {
 
   deleteIngredient = e => {
     // console.log(e.target.name);
-    this.setState({
-      selectedIngredients: this.state.selectedIngredients.filter(
-        x => x !== e.target.name
-      )
-    });
+    this.setState(
+      {
+        selectedIngredients: this.state.selectedIngredients.filter(
+          x => x !== e.target.name
+        )
+      },
+      () => {
+        this.props.updateSearch(
+          this.state.selectedIngredients,
+          this.state.timeField
+        );
+      }
+    );
   };
 
   render() {
@@ -70,7 +84,20 @@ class NavbarSearch extends Component {
         <Form>
           <Form.Field>
             <div className="ui action input">
+              <div>
+                Enter time: Default 60 mins
+                <Input
+                  placeholder="Default 60 mins"
+                  name="time"
+                  value={this.state.timeField}
+                  onChange={event => {
+                    // this.props.updatetimeField(event.target.value);
+                    this.setState({ timeField: event.target.value });
+                  }}
+                />
+              </div>
               <div className="navbarSearch">
+                Filter by Ingredients:
                 <Input
                   onChange={event => {
                     this.setState({ ingredientsField: event.target.value });
@@ -84,17 +111,6 @@ class NavbarSearch extends Component {
                 <datalist id="Ingredients">
                   {this.displayIngredients()}
                 </datalist>
-              </div>
-              <div>
-                <Input
-                  placeholder="Default 60 mins"
-                  name="time"
-                  value={this.state.timeField}
-                  onChange={event => {
-                    // this.props.updatetimeField(event.target.value);
-                    this.setState({ timeField: event.target.value });
-                  }}
-                />
               </div>
               <button
                 onClick={event => {
