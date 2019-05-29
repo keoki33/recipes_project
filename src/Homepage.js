@@ -21,6 +21,10 @@ class Homepage extends Component {
               path="/recipes"
               component={props => (
                 <Recipes
+                  updateFavorites={this.props.updateFavorites}
+                  favorites={this.props.favorites}
+                  searchTime={this.props.searchTime}
+                  searchIngredients={this.props.searchIngredients}
                   login={this.props.login}
                   logout={this.props.logout}
                   user={this.props.user}

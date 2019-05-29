@@ -47,6 +47,8 @@ class Recipes extends Component {
     ) : (
       this.state.recipe.map(x => (
         <RecipeCard
+          updateFavorites={this.props.updateFavorites}
+          favorites={this.props.favorites}
           handleClick={() => this.props.history.push(`/recipe/${x._id}`)}
           key={x._id}
           recipe={x}

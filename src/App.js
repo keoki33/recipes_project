@@ -7,7 +7,14 @@ import Homepage from "./Homepage";
 class App extends Component {
   state = {
     user: "",
-    normal: true //true will load normal site, false will be 2009 site
+    normal: true, //true will load normal site, false will be 2009 site
+    searchTime: 60,
+    searchIngredients: [],
+    favorites: [
+      "5cee639d08e61093a10307c1",
+      "5cee639d08e61093a10307c3",
+      "5cee639d08e61093a10307c2"
+    ]
   };
 
   whatever = () => {};
@@ -52,13 +59,29 @@ class App extends Component {
     });
   };
 
+  updateAppSearchTime = (search, time) => {
+    this.setState({
+      searchTime: time,
+      searchIngredients: search
+    });
+  };
+
+  updateFavorites = () => {
+    console.log("updatefav");
+  };
+
   render() {
     return (
       <div className="body">
         <Homepage
+          searchTime={this.state.searchTime}
+          searchIngredients={this.state.searchIngredients}
+          updateAppSearchTime={this.updateAppSearchTime}
+          favorites={this.state.favorites}
           login={this.login}
           logout={this.logout}
           user={this.state.user}
+          updateFavorites={this.updateFavorites}
         />
       </div>
     );

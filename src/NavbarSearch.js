@@ -8,13 +8,13 @@ class NavbarSearch extends Component {
     timeField: 60,
     ingredientsField: "",
     ingredients: ["beef", "chocolate", "chicken", "dog", "cat"],
-    selectedIngredients: []
+    searchIngredients: []
   };
 
   whatever = () => {};
 
   componentDidMount() {
-    console.log(this.state.selectedIngredients);
+    console.log(this.state.searchIngredients);
     console.log("buttons");
     this.ingredientButtons();
   }
@@ -24,23 +24,23 @@ class NavbarSearch extends Component {
     // console.log(this.state.timeField);
     if (this.state.ingredientsField == "") {
       this.props.updateSearch(
-        this.state.selectedIngredients,
+        this.state.searchIngredients,
         this.state.timeField
       );
     } else if (
-      !this.state.selectedIngredients.includes(this.state.ingredientsField)
+      !this.state.searchIngredients.includes(this.state.ingredientsField)
     ) {
       this.setState(
         {
-          selectedIngredients: [
-            ...this.state.selectedIngredients,
+          searchIngredients: [
+            ...this.state.searchIngredients,
             this.state.ingredientsField
           ],
           ingredientsField: ""
         },
         () => {
           this.props.updateSearch(
-            this.state.selectedIngredients,
+            this.state.searchIngredients,
             this.state.timeField
           );
         }
@@ -53,7 +53,7 @@ class NavbarSearch extends Component {
   };
 
   ingredientButtons = () => {
-    return this.state.selectedIngredients.map(x => (
+    return this.state.searchIngredients.map(x => (
       <button
         onClick={event => {
           this.deleteIngredient(event);
@@ -72,13 +72,13 @@ class NavbarSearch extends Component {
     // console.log(e.target.name);
     this.setState(
       {
-        selectedIngredients: this.state.selectedIngredients.filter(
+        searchIngredients: this.state.searchIngredients.filter(
           x => x !== e.target.name
         )
       },
       () => {
         this.props.updateSearch(
-          this.state.selectedIngredients,
+          this.state.searchIngredients,
           this.state.timeField
         );
       }

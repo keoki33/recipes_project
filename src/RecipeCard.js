@@ -13,12 +13,36 @@ class RecipeCard extends Component {
   whatever = () => {};
 
   toggleFavorite = () => {
-    return this.state.favourite ? (
-      <Icon name="heart" style={{ color: "red" }} />
-    ) : (
-      <Icon name="heart" />
-    );
+    if (this.props.favorites.includes(this.props.recipe._id)) {
+      console.log(this.props.recipe._id);
+      return (
+        <button
+          onClick={event => {
+            event.stopPropagation();
+            this.props.updateFavorites();
+          }}
+        >
+          Add to Favorites ♥
+        </button>
+      );
+    } else
+      return (
+        <button
+          onClick={event => {
+            event.stopPropagation();
+            this.props.updateFavorites();
+          }}
+          style={{ color: "red" }}
+        >
+          ♥
+        </button>
+      );
   };
+  //     <Icon name="heart" style={{ color: "red" }} />
+  //   ) : (
+  //     <Icon name="heart" />
+  //   );
+  // };
 
   render() {
     return (
@@ -37,17 +61,15 @@ class RecipeCard extends Component {
           />
           <h4>{this.props.recipe.strMeal}</h4>
           Time to cook: {this.props.recipe.time} minutes
-          <button
+          {/* <button
             onClick={event => {
               event.stopPropagation();
-              this.state.favourite
-                ? this.setState({ favourite: false })
-                : this.setState({ favourite: true });
+              this.props.updateFavorites();
             }}
           >
             {this.toggleFavorite()}
-            {this.state.favourite === false && "Add to Favourites"}
-          </button>
+          </button> */}
+          {this.toggleFavorite()}
         </div>
       </Router>
     );
