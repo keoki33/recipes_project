@@ -7,9 +7,17 @@ import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Homepage extends Component {
-  state = {};
+  state = {
+    recipe: []
+  };
 
   whatever = () => {};
+
+  loadAllRecipes = () => {
+    fetch("http://localhost:3000/api/recipes")
+      .then(resp => resp.json())
+      .then(x => this.setState({ recipe: x.recipes, loading: false }));
+  };
 
   render() {
     return (
@@ -21,7 +29,9 @@ class Homepage extends Component {
               path="/recipes"
               component={props => (
                 <Recipes
-                  updateFavorites={this.props.updateFavorites}
+                  recipes={this.state.recipe}
+                  deleteFav={this.props.deleteFav}
+                  addFav={this.props.addFav}
                   favorites={this.props.favorites}
                   searchTime={this.props.searchTime}
                   searchIngredients={this.props.searchIngredients}

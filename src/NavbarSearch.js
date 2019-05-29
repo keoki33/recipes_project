@@ -14,8 +14,8 @@ class NavbarSearch extends Component {
   whatever = () => {};
 
   componentDidMount() {
-    console.log(this.state.searchIngredients);
-    console.log("buttons");
+    // console.log(this.state.searchIngredients);
+    // console.log("buttons");
     this.ingredientButtons();
   }
 

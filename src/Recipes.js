@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Recipes extends Component {
   state = {
+    loading: false,
     recipe: [],
     ingredientsList: [],
     searchTime: 60,
@@ -16,10 +17,16 @@ class Recipes extends Component {
   };
 
   componentDidMount() {
-    this.loadAllRecipes();
+    console.log("componentdidmount");
+    if (this.state.recipe === undefined || this.state.recipe.length == 0) {
+      this.loadAllRecipes();
+    } else {
+      console.log("gotrecipes");
+    }
   }
 
   loadAllRecipes = () => {
+    console.log("loadall");
     this.setState({ loading: true });
     fetch("http://localhost:3000/api/recipes")
       .then(resp => resp.json())
@@ -47,7 +54,8 @@ class Recipes extends Component {
     ) : (
       this.state.recipe.map(x => (
         <RecipeCard
-          updateFavorites={this.props.updateFavorites}
+          deleteFav={this.props.deleteFav}
+          addFav={this.props.addFav}
           favorites={this.props.favorites}
           handleClick={() => this.props.history.push(`/recipe/${x._id}`)}
           key={x._id}
@@ -102,6 +110,7 @@ class Recipes extends Component {
       <div className="Recipes">
         {/* {console.log(this.state.recipe)} */}
         <Navbar
+          displayFavorites={this.displayFavorites}
           login={this.props.login}
           logout={this.props.logout}
           updateSearch={this.updateSearch}

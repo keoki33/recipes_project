@@ -14,15 +14,16 @@ class RecipeCard extends Component {
 
   toggleFavorite = () => {
     if (this.props.favorites.includes(this.props.recipe._id)) {
-      console.log(this.props.recipe._id);
+      // console.log(this.props.recipe._id);
       return (
         <button
           onClick={event => {
             event.stopPropagation();
-            this.props.updateFavorites();
+            this.props.deleteFav(this.props.recipe._id);
           }}
+          style={{ color: "red" }}
         >
-          Add to Favorites ♥
+          ♥
         </button>
       );
     } else
@@ -30,11 +31,10 @@ class RecipeCard extends Component {
         <button
           onClick={event => {
             event.stopPropagation();
-            this.props.updateFavorites();
+            this.props.addFav(this.props.recipe._id);
           }}
-          style={{ color: "red" }}
         >
-          ♥
+          Add to Favorites ♥
         </button>
       );
   };

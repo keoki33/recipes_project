@@ -10,25 +10,65 @@ class App extends Component {
     normal: true, //true will load normal site, false will be 2009 site
     searchTime: 60,
     searchIngredients: [],
-    favorites: [
-      "5cee639d08e61093a10307c1",
-      "5cee639d08e61093a10307c3",
-      "5cee639d08e61093a10307c2"
-    ]
+    favorites: [],
+    userObject: "",
+    test: ""
   };
+
+  // when login update favorites array
+  // when add fav add and then update state
+  // when delete delete and then update state
+  // when logout delete fav state
 
   whatever = () => {};
 
   login = event => {
-    // event.preventDefault();
-    // event.stopPropagation();
+    event.preventDefault();
     this.setState({ user: event.target.user.value });
-    // console.log(this.state);
+    fetch("http://localhost:3000/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        user: {
+          email: `${event.target.user.value}@gmail.com`,
+          password: "12345",
+          username: event.target.user.value
+        }
+      })
+    })
+      .then(resp => resp.json())
+      .then(() =>
+        fetch("http://localhost:3000/api/users/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            user: {
+              email: `${this.state.user}@gmail.com`,
+              password: "12345"
+            }
+          })
+        })
+          .then(resp => resp.json())
+          .then(x =>
+            this.setState({ userObject: x, favorites: x.user.favorites }, () =>
+              localStorage.setItem("token", this.state.userObject.user.token)
+            )
+          )
+      );
   };
 
   logout = event => {
     event.preventDefault();
-    this.setState({ user: "" });
+    this.setState({
+      user: "",
+      favorites: []
+    });
   };
 
   updateAppSearch = (searchTerms, searchTime) => {
@@ -66,8 +106,39 @@ class App extends Component {
     });
   };
 
-  updateFavorites = () => {
-    console.log("updatefav");
+  addFav = id => {
+    if (this.state.user != "") {
+      // console.log(id);
+      // console.log(this.state.userObject.user.token);
+      // console.log(this.state.userObject.user.favorites);
+
+      fetch(`http://localhost:3000/api/recipes/${id}/favorite`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+          Authorization: `Token ${this.state.userObject.user.token}` // this is needed
+        }
+      }).then(resp => resp.json());
+      this.setState({ favorites: [...this.state.favorites, id] });
+    }
+    console.log(this.state.user);
+  };
+
+  deleteFav = id => {
+    // console.log(id);
+    // console.log(this.state.userObject.user.token);
+    // console.log(this.state.userObject.user.favorites);
+
+    fetch(`http://localhost:3000/api/recipes/${id}/favorite`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+        Authorization: `Token ${this.state.userObject.user.token}` // this is needed
+      }
+    }).then(resp => resp.json());
+    this.setState({ favorites: this.state.favorites.filter(x => x != id) });
   };
 
   render() {
@@ -81,7 +152,8 @@ class App extends Component {
           login={this.login}
           logout={this.logout}
           user={this.state.user}
-          updateFavorites={this.updateFavorites}
+          deleteFav={this.deleteFav}
+          addFav={this.addFav}
         />
       </div>
     );
