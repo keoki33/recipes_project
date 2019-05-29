@@ -59,7 +59,18 @@ class Recipes extends Component {
     console.log(search);
 
     if (search === undefined || search.length == 0) {
-      this.loadAllRecipes();
+      this.setState({
+        searchTime: time,
+        searchIngredients: search,
+        loading: true
+      });
+      fetch(`http://localhost:3000/api/recipes/search?q=&time=${time}`)
+        .then(resp => resp.json())
+        .then(x =>
+          this.setState({ recipe: x.recipes, loading: false }, () =>
+            this.setIngredientList()
+          )
+        );
     } else {
       this.setState({
         searchTime: time,

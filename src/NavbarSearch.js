@@ -22,8 +22,14 @@ class NavbarSearch extends Component {
   handleClick = event => {
     // console.log(this.state.ingredientsField);
     // console.log(this.state.timeField);
-    this.state.ingredientsField !== "" &&
-      !this.state.selectedIngredients.includes(this.state.ingredientsField) &&
+    if (this.state.ingredientsField == "") {
+      this.props.updateSearch(
+        this.state.selectedIngredients,
+        this.state.timeField
+      );
+    } else if (
+      !this.state.selectedIngredients.includes(this.state.ingredientsField)
+    ) {
       this.setState(
         {
           selectedIngredients: [
@@ -39,6 +45,7 @@ class NavbarSearch extends Component {
           );
         }
       );
+    }
   };
 
   displayIngredients = () => {
