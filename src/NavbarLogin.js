@@ -21,6 +21,38 @@ class NavbarLogin extends Component {
           <input type="text" name="user" />
           <button> Login </button>
         </form>
+        <div id="social">
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s1.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s2.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s3.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s5.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+        </div>
       </div>
     ) : (
       <div>
@@ -34,6 +66,38 @@ class NavbarLogin extends Component {
         >
           Logout
         </button>
+        <div id="social">
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s1.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s2.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s3.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+          <img
+            src={require(`/Users/flatironschool/Development/recipes_project/src/s5.png`)}
+            alt=""
+            width="25"
+            height="25"
+          />
+        </div>
       </div>
     );
   };

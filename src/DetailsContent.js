@@ -34,15 +34,18 @@ class DetailsContent extends Component {
       >
         <div className="detailsImage">
           {/* <h1>{this.props.recipe[0].strMeal}</h1> */}
-          <img
-            // width="420"
-            // height="315"
-            src={this.props.recipe[0].strMealThumb}
-            alt={this.props.recipe[0].strMealThumb}
-          />
+          <figure>
+            <img
+              // width="420"
+              // height="315"
+              src={this.props.recipe[0].strMealThumb}
+              alt={this.props.recipe[0].strMealThumb}
+              id="detailsImage"
+            />
+          </figure>
         </div>
         <div className="detailsIngredients">
-          <h1>Ingredients:</h1>
+          <h1>Ingredients: 🥣</h1>
           <ul>{this.displayIngredients()}</ul>
         </div>
         <div className="detailsInstructions">
@@ -51,7 +54,7 @@ class DetailsContent extends Component {
             height="315"
             src={this.props.recipe[0].strYoutube.replace("watch?v=", "embed/")}
           /> */}
-          <h1>Method:</h1>
+          <h1>🍽 Method:</h1>
 
           <p>{this.props.recipe[0].strInstructions}</p>
         </div>

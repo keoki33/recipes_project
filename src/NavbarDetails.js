@@ -15,7 +15,9 @@ class NavbarDetails extends Component {
         <h1>{this.props.recipe[0] && this.props.recipe[0].strMeal}</h1>
         {console.log(this.props.recipe[0])}
 
-        <Link to="/recipes">Back to Recipes</Link>
+        <Link to="/recipes" style={{ fontSize: 20, color: "green" }}>
+          Back to Recipes
+        </Link>
       </div>
     );
   }

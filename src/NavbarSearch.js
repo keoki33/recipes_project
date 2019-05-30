@@ -94,6 +94,7 @@ class NavbarSearch extends Component {
               <div>
                 Enter time: Default 60 mins
                 <Input
+                  id="Time"
                   placeholder="Default 60 mins"
                   name="time"
                   value={this.state.timeField}
