@@ -13,8 +13,25 @@
 }
 
 body {
-  background-color: rgb(221, 221, 221);
+  /* background-color: rgb(221, 221, 221); */
+  font-family: "Signika", sans-serif;
+  background: #424242;
+  background: -moz-linear-gradient(left, #424242 0%, #777f71 50%, #757575 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #424242 0%,
+    #777f71 50%,
+    #757575 100%
+  );
+  background: linear-gradient(to right, #424242 0%, #777f71 50%, #757575 100%);
 }
+
+/* body > h {
+  font-family: "Dancing Script", cursive;
+} */
+
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Signika', sans-serif; */
 
 /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */ /* Details Page  */
 
@@ -39,7 +56,7 @@ body {
   grid-area: im;
   /* border: 1px solid #000000; */
   /* border-radius: 10px; */
-  background-color: #636363;
+  /* background-color: #636363; */
 }
 
 .detailsImage > img {
@@ -47,6 +64,8 @@ body {
   /* max-height: 100%; */
   border-radius: 10px;
   padding: 0px;
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
 }
 
 .detailsImage h1 {
@@ -63,6 +82,8 @@ body {
   border: 1px solid #000000;
   border-radius: 10px;
   background-color: #b6b3b3;
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
 }
 
 .detailsIngredients ul li {
@@ -85,10 +106,12 @@ body {
   border-radius: 10px;
   padding: 30px;
   font-size: 1.5vw;
-  column-count: 2;
-  column-rule-style: double;
+  /* column-count: 2;
+  column-rule-style: double; */
   line-height: 2;
   background-color: #b6b3b3;
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
 }
 
 .detailsVideo {
@@ -99,6 +122,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #000000;
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.69);
 }
 
 .detailsVideo iframe {
@@ -185,7 +210,16 @@ body {
   margin: 10px;
   border-radius: 10px;
   padding: 10px;
-  background-color: #d3d3d3;
+  /* background-color: #d3d3d3; */
+  background: #424242;
+  background: -moz-linear-gradient(left, #424242 0%, #777f71 50%, #757575 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #424242 0%,
+    #777f71 50%,
+    #757575 100%
+  );
+  background: linear-gradient(to right, #424242 0%, #777f71 50%, #757575 100%);
 }
 
 .navbar img {
@@ -202,6 +236,7 @@ body {
 }
 
 .navbarDetails h1 {
+  font-family: "Dancing Script", cursive;
   font-size: 3vw;
   padding: 0px;
   margin: 0px;
