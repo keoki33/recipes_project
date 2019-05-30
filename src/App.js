@@ -25,43 +25,50 @@ class App extends Component {
 
   login = event => {
     event.preventDefault();
-    this.setState({ user: event.target.user.value });
-    fetch("http://localhost:3000/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        user: {
-          email: `${event.target.user.value}@gmail.com`,
-          password: "12345",
-          username: event.target.user.value
-        }
-      })
-    })
-      .then(resp => resp.json())
-      .then(() =>
-        fetch("http://localhost:3000/api/users/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-          body: JSON.stringify({
-            user: {
-              email: `${this.state.user}@gmail.com`,
-              password: "12345"
-            }
-          })
+    if (event.target.user.value != "") {
+      this.setState({ user: event.target.user.value });
+      fetch("http://localhost:3000/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          user: {
+            email: `${event.target.user.value}@gmail.com`,
+            password: "12345",
+            username: event.target.user.value
+          }
         })
-          .then(resp => resp.json())
-          .then(x =>
-            this.setState({ userObject: x, favorites: x.user.favorites }, () =>
-              localStorage.setItem("token", this.state.userObject.user.token)
+      })
+        .then(resp => resp.json())
+        .then(() =>
+          fetch("http://localhost:3000/api/users/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: JSON.stringify({
+              user: {
+                email: `${this.state.user}@gmail.com`,
+                password: "12345"
+              }
+            })
+          })
+            .then(resp => resp.json())
+            .then(x =>
+              this.setState(
+                { userObject: x, favorites: x.user.favorites },
+                () =>
+                  localStorage.setItem(
+                    "token",
+                    this.state.userObject.user.token
+                  )
+              )
             )
-          )
-      );
+        );
+    }
   };
 
   logout = event => {
