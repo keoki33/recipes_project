@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import Recipes from "./Recipes";
 import Details from "./Details";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Homepage extends Component {
   state = {
@@ -27,7 +27,7 @@ class Homepage extends Component {
             <Route
               exact
               path="/recipes"
-              component={props => (
+              render={props => (
                 <Recipes
                   recipes={this.state.recipe}
                   deleteFav={this.props.deleteFav}
@@ -45,7 +45,7 @@ class Homepage extends Component {
             />
             <Route
               path="/recipe/:id"
-              component={props => (
+              render={props => (
                 <Details
                   login={this.props.login}
                   logout={this.props.logout}

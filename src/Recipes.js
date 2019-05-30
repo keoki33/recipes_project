@@ -4,7 +4,7 @@ import RecipeCard from "./RecipeCard";
 import Navbar from "./Navbar";
 import RecipeCardPlaceholder from "./RecipeCardPlaceholder";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Recipes extends Component {
   state = {
@@ -54,6 +54,7 @@ class Recipes extends Component {
     ) : (
       this.state.recipe.map(x => (
         <RecipeCard
+          wait={9000}
           deleteFav={this.props.deleteFav}
           addFav={this.props.addFav}
           favorites={this.props.favorites}

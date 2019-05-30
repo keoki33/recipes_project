@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Grid, Image, Container, Menu } from "semantic-ui-react";
+// import { Grid, Image, Container, Menu } from "semantic-ui-react";
 
 import NavbarSearch from "./NavbarSearch";
 import NavbarLogin from "./NavbarLogin";
 import NavbarDetails from "./NavbarDetails";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Navbar extends Component {
   state = {};

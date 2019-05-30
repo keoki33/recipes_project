@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // import RecipeCard from "./RecipeCard";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class DetailsContent extends Component {
   state = {};
@@ -33,7 +33,7 @@ class DetailsContent extends Component {
         // }}
       >
         <div className="detailsImage">
-          <h1>{this.props.recipe[0].strMeal}</h1>
+          {/* <h1>{this.props.recipe[0].strMeal}</h1> */}
           <img
             // width="420"
             // height="315"
@@ -55,6 +55,7 @@ class DetailsContent extends Component {
         </div>
         <div className="detailsVideo">
           <iframe
+            title="t"
             width="640"
             height="480"
             src={this.props.recipe[0].strYoutube

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 // import RecipeCard from "./RecipeCard";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Icon } from "semantic-ui-react";
+import { BrowserRouter as Router } from "react-router-dom";
+// import { Icon } from "semantic-ui-react";
 
 class RecipeCard extends Component {
   state = {

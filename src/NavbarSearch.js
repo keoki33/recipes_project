@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Form, Input, Search, Select } from "semantic-ui-react";
+import { Form, Input } from "semantic-ui-react";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class NavbarSearch extends Component {
   state = {

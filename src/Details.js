@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import DetailsContent from "./DetailsContent";
 import DetailsPlaceholder from "./DetailsPlaceholder";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class Details extends Component {
   state = {

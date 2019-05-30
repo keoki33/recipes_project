@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // import RecipeCard from "./RecipeCard";
 
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class NavbarLogin extends Component {
   state = {};
