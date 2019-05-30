@@ -51,6 +51,8 @@ class DetailsContent extends Component {
             height="315"
             src={this.props.recipe[0].strYoutube.replace("watch?v=", "embed/")}
           /> */}
+          <h1>Method:</h1>
+
           <p>{this.props.recipe[0].strInstructions}</p>
         </div>
         <div className="detailsVideo">

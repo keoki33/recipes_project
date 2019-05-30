@@ -59,7 +59,7 @@ class RecipeCard extends Component {
             // height="100px"
             alt=""
           />
-          <h4>{this.props.recipe.strMeal}</h4>
+          <p style={{ fontSize: 20 }}>{this.props.recipe.strMeal}</p>
           Time to cook: {this.props.recipe.time} minutes
           {/* <button
             onClick={event => {

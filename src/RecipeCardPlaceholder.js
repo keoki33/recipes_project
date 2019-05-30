@@ -4,7 +4,7 @@ import { Grid, Placeholder, Segment } from "semantic-ui-react";
 export default class RecipeCardPlaceholder extends Component {
   render() {
     return (
-      <div>
+      <div className="cardPlaceholder">
         <h2>Cooking in progress..</h2>
         <div id="cooking">
           <div class="bubble" />
