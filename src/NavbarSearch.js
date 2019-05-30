@@ -120,6 +120,7 @@ class NavbarSearch extends Component {
                 </datalist>
               </div>
               <button
+                id="selectButton"
                 onClick={event => {
                   this.handleClick(event);
                 }}

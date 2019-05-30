@@ -217,9 +217,11 @@ body {
 }
 
 .navbarSearch {
-  grid-column: 3/10;
+  grid-column: 6/8;
   text-align: center;
   max-width: 100%;
+}
+.navbarSearch button {
 }
 /* .navbar input {
   border-radius: 10px;
@@ -231,6 +233,17 @@ body {
 .iButton {
   margin-right: 5px;
   margin-top: 5px;
+  border-radius: 10px;
+  /* font-size: 10px; */
+}
+
+#selectButton {
+  margin-right: 5px;
+  margin-top: 17px;
+  border-radius: 10px;
+  color: #175c10;
+  width: 10%;
+  height: 40px;
 }
 
 /* animation */ /* animation */ /* animation */ /* animation */ /* animation */ /* animation */ /* animation */ /* animation */ /* animation */
