@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 // import RecipeCard from "./RecipeCard";
 
@@ -40,12 +41,14 @@ class NavbarLogin extends Component {
             width="25"
             height="25"
           />
-          <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
-            alt=""
-            width="25"
-            height="25"
-          />
+          <a href="https://www.facebook.com">
+            <img
+              src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
+              alt=""
+              width="25"
+              height="25"
+            />
+          </a>
           <img
             src={require(`/Users/flatironschool/Development/recipes_project/src/s5.png`)}
             alt=""

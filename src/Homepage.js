@@ -26,7 +26,7 @@ class Homepage extends Component {
           <Switch>
             <Route
               exact
-              path="/recipes"
+              path={["/recipes", "/home", "/"]}
               render={props => (
                 <Recipes
                   recipes={this.state.recipe}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 // import { Grid, Image, Container, Menu } from "semantic-ui-react";
 
 import NavbarSearch from "./NavbarSearch";
@@ -32,12 +33,14 @@ class Navbar extends Component {
     return (
       <div className="navbar">
         <div className="navbarLogo">
-          <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/logo.jpeg`)}
-            alt=""
-            width="90"
-            height="90"
-          />
+          <Link to="/recipes">
+            <img
+              src={require(`/Users/flatironschool/Development/recipes_project/src/logo.jpeg`)}
+              alt=""
+              width="90"
+              height="90"
+            />
+          </Link>
         </div>
         {this.navbarMode()}
         <div className="navbarLogin">
