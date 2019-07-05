@@ -24,33 +24,33 @@ class NavbarLogin extends Component {
         </form>
         <div id="social">
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s1.png`)}
+            src={require(`./s1.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s2.png`)}
+            src={require(`./s2.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s3.png`)}
+            src={require(`./s3.png`)}
             alt=""
             width="25"
             height="25"
           />
           <a href="https://www.facebook.com">
             <img
-              src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
+              src={require(`./s4.png`)}
               alt=""
               width="25"
               height="25"
             />
           </a>
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s5.png`)}
+            src={require(`./s5.png`)}
             alt=""
             width="25"
             height="25"
@@ -71,31 +71,31 @@ class NavbarLogin extends Component {
         </button>
         <div id="social">
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s1.png`)}
+            src={require(`./s1.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s2.png`)}
+            src={require(`./s2.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s3.png`)}
+            src={require(`./s3.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s4.png`)}
+            src={require(`./s4.png`)}
             alt=""
             width="25"
             height="25"
           />
           <img
-            src={require(`/Users/flatironschool/Development/recipes_project/src/s5.png`)}
+            src={require(`./s5.png`)}
             alt=""
             width="25"
             height="25"

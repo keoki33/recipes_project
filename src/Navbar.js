@@ -35,7 +35,7 @@ class Navbar extends Component {
         <div className="navbarLogo">
           <Link to="/recipes">
             <img
-              src={require(`/Users/flatironschool/Development/recipes_project/src/logo.jpeg`)}
+              src={require(`./logo.jpeg`)}
               alt=""
               width="90"
               height="90"
